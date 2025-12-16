@@ -223,7 +223,9 @@ export class VimState implements vscode.Disposable {
       throw new Error('Tried setting modeData to undefined');
     }
 
-    await this.inputMethodSwitcher?.switchInputMethod(this.currentMode, modeData.mode);
+    if (this.currentMode !== modeData.mode) {
+      await this.inputMethodSwitcher?.switchInputMethod(this.currentMode, modeData.mode);
+    }
     if (this.returnToInsertAfterCommand && modeData.mode === Mode.Insert) {
       this.returnToInsertAfterCommand = false;
     }
