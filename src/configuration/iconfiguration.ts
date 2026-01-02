@@ -115,6 +115,11 @@ export interface IConfiguration {
   hlsearch: boolean;
 
   /**
+   * Should we use fast insert mode
+   */
+  fastInsertMode: boolean;
+
+  /**
    * Ignore case when searching with / or ?.
    */
   ignorecase: boolean;

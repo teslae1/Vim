@@ -20,6 +20,7 @@ export class Configuration implements IConfiguration {
   overrideCopy = true;
   textwidth = 80;
   hlsearch = false;
+  fastInsertMode = false;
   ignorecase = true;
   smartcase = true;
   autoindent = true;

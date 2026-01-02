@@ -329,6 +329,8 @@ export async function activate(context: vscode.ExtensionContext, handleLocal: bo
             compositionState.insertedText = true;
             void vscode.commands.executeCommand('default:type', { text: args.text });
           }
+        } else if (configuration.fastInsertMode && mh.vimState.currentMode === Mode.Insert) {
+          await vscode.commands.executeCommand('default:type', { text: args.text });
         } else {
           await mh.handleKeyEvent(args.text);
         }

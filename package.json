@@ -1,31 +1,13 @@
 {
-  "name": "vim",
-  "displayName": "Vim",
-  "description": "Vim emulation for Visual Studio Code",
-  "icon": "images/icon.png",
-  "version": "1.32.4",
-  "publisher": "vscodevim",
-  "sponsor": {
-    "url": "https://github.com/sponsors/J-Fields"
-  },
-  "galleryBanner": {
-    "color": "#e3f4ff",
-    "theme": "light"
-  },
+  "name": "fast_insert_mode_vim",
+  "displayName": "fast_insert_mode_vim",
+  "description": "branched from the vim extension with customized fast insertmode",
+  "version": "0.0.1",
+  "publisher": "teslae1",
   "license": "MIT",
   "keywords": [
-    "vim",
-    "vi",
-    "vscodevim"
+    "fast_insert_mode_vim"
   ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/VSCodeVim/Vim.git"
-  },
-  "homepage": "https://github.com/VSCodeVim/Vim",
-  "bugs": {
-    "url": "https://github.com/VSCodeVim/Vim/issues"
-  },
   "engines": {
     "vscode": "^1.74.0"
   },
@@ -41,7 +23,6 @@
     "onStartupFinished",
     "onCommand:type"
   ],
-  "qna": "https://github.com/VSCodeVim/Vim/discussions",
   "main": "./out/extension",
   "browser": "./out/extensionWeb",
   "capabilities": {
@@ -770,6 +751,11 @@
         "vim.hlsearch": {
           "type": "boolean",
           "description": "Show all matches of the most recent search pattern.",
+          "default": false
+        },
+        "vim.fastInsertMode": {
+          "type": "boolean",
+          "description": "lets vscode handle insert mode completely - this is faster but does not support things like recording macroes etc",
           "default": false
         },
         "vim.inccommand": {

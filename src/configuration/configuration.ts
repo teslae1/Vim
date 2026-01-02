@@ -238,6 +238,8 @@ class Configuration implements IConfiguration {
 
   hlsearch = false;
 
+  fastInsertMode = false;
+
   ignorecase = true;
 
   smartcase = true;
