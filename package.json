@@ -1,12 +1,16 @@
 {
-  "name": "fast_insert_mode_vim",
-  "displayName": "fast_insert_mode_vim",
+  "name": "VimFastInsertMode",
+  "displayName": "VimFastInsertMode",
   "description": "branched from the vim extension with customized fast insertmode",
   "version": "0.0.1",
-  "publisher": "teslae1",
+  "publisher": "karlMogensen",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/teslae1/Vim/tree/fast_insert_mode"
+  },
   "keywords": [
-    "fast_insert_mode_vim"
+    "VimFastInsertMode"
   ],
   "engines": {
     "vscode": "^1.74.0"
