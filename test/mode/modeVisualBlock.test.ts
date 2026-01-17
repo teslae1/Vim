@@ -252,6 +252,13 @@ suite('VisualBlock mode', () => {
     });
   });
 
+  test('p does not result in multiple cursors (bugfix)', async () => {
+    await modeHandler.handleMultipleKeyEvents(['i', 'c', 'a', 't', '\n', 'c', 'a', 't']);
+    await modeHandler.handleMultipleKeyEvents(['<Esc>', 'g', 'g', '0']);
+    await modeHandler.handleMultipleKeyEvents(['v', 'y', '<C-v>', 'j', 'l', 'p']);
+    assert.equal(1, modeHandler.vimState.cursors.length);
+  });
+
   newTest({
     title: 'Properly add to end of line (`j` then `$`)',
     start: ['|Dog', 'Angry', 'Dog', 'Angry', 'Dog'],
