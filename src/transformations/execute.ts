@@ -276,7 +276,10 @@ export async function executeTransformations(
 
   // We handle multiple cursors in a different way in visual block mode, unfortunately.
   // TODO - refactor that out!
-  if (vimState.currentMode !== Mode.VisualBlock && !manuallySetCursorPositions) {
+  const processingSelectionsFromVisualBlockMode =
+    vimState.currentMode === Mode.VisualBlock ||
+    vimState.lastVisualSelection?.mode === Mode.VisualBlock;
+  if (!processingSelectionsFromVisualBlockMode && !manuallySetCursorPositions) {
     vimState.cursors = selections.map((sel, idx) => {
       const diffs = accumulatedPositionDifferences[idx] ?? [];
       if (vimState.recordedState.operatorPositionDiff) {
